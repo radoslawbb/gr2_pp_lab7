@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std;
 
+/*zadanie1
 void choinka(int spacje, int gwiazdki) {
     if (gwiazdki < 1) return;
     choinka(spacje + 1, gwiazdki - 2);
@@ -22,22 +23,47 @@ int wysokosc(int n) {
         wynik += 2;
     }
     return wynik;
-
-    /*if (n == 1) return 1;
-    if (n % 2 == 0) {
-        return (n * 2) - 1;
+}*/
+    
+/*zadanie2
+int sumaCyfr(int liczba) {
+    int wynik = 0;
+    while (liczba > 0) {
+        wynik += (liczba % 10);
+        liczba /= 10;
     }
-    else {
-        return (n * 2) + 1;
-    }*/
+    return wynik;
+}
+
+int sumaCyfrRek(int liczba) {
+    if (liczba <= 0) return 0;
+
+    return (liczba % 10) + sumaCyfrRek(liczba / 10);
+}*/
+
+
+string odwroc(string napis) {
+
 }
 
 int main()
 {
+    /*zadanie1
     int n;
     cout << "Podaj wysokosc choinki: ";
     cin >> n;
-    choinka(0, wysokosc(n));
+     
+    choinka(0, wysokosc(n));*/
+
+    /*zadanie2 
+    int n;
+    cout << "Podaj liczbe: ";
+    cin >> n;
+
+    cout << "Suma cyfr iteracyjnie: " << sumaCyfr(n) << endl;
+    cout << "Suma cyfr rekurencyjnie: " << sumaCyfrRek(n) << endl;*/
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
