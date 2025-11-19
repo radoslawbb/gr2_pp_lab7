@@ -4,9 +4,40 @@
 #include <iostream>
 using namespace std;
 
+void choinka(int spacje, int gwiazdki) {
+    if (gwiazdki < 1) return;
+    choinka(spacje + 1, gwiazdki - 2);
+    for (int i = 0; i < spacje; i++) {
+        cout << " ";
+    }
+    for (int i = 0; i < gwiazdki; i++) {
+        cout << "*";
+    }
+    cout << endl;
+}
+
+int wysokosc(int n) {
+    int wynik = 1;
+    for (int i = 1; i < n; i++) {
+        wynik += 2;
+    }
+    return wynik;
+
+    /*if (n == 1) return 1;
+    if (n % 2 == 0) {
+        return (n * 2) - 1;
+    }
+    else {
+        return (n * 2) + 1;
+    }*/
+}
+
 int main()
 {
-    cout << "Hello World!\n";
+    int n;
+    cout << "Podaj wysokosc choinki: ";
+    cin >> n;
+    choinka(0, wysokosc(n));
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
