@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 /*zadanie1
@@ -41,10 +42,51 @@ int sumaCyfrRek(int liczba) {
     return (liczba % 10) + sumaCyfrRek(liczba / 10);
 }*/
 
-
+/*zadanie 3
 string odwroc(string napis) {
+    if (napis.empty()) {
+        return "";
+    }
 
+    int ostatni = napis.length() - 1;
+
+    return napis[ostatni] + odwroc(napis.substr(0, ostatni));
+}*/
+
+/*zadanie 4 - nie dziala
+bool palindrom(string napis, int poczatek, int koniec) {
+    if (poczatek < koniec) {
+        
+        if (napis[poczatek] == napis[koniec]) {
+            palindrom(napis, poczatek + 1, koniec - 1);
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return true;
+    }
+
+}*/
+
+/*zadanie 9 
+int sumaIte(int n) {
+    int suma = 0;
+    for (int i = 1; i <= n; i++) {
+        suma += i;
+    }
+    return suma;
 }
+
+int sumaRek(int n) {
+    if (n < 1) {
+        return 0;
+    }
+    else {
+        return n + sumaRek(n - 1);
+    }
+}*/
 
 int main()
 {
@@ -63,7 +105,35 @@ int main()
     cout << "Suma cyfr iteracyjnie: " << sumaCyfr(n) << endl;
     cout << "Suma cyfr rekurencyjnie: " << sumaCyfrRek(n) << endl;*/
 
+    /*zadanie 3
+    string napis, odwrocony;
 
+    cout << "Napisz napis: ";
+    getline(cin, napis);
+    odwrocony = odwroc(napis);
+    cout << "Odwrocony napis: " << odwrocony << endl;*/
+
+    /*zadanie 4 - nie dziala
+    string napis;
+    int dl = napis.length();
+
+    cout << "Napisz napis: ";
+    cin >> napis;
+    if (palindrom(napis, 0, dl - 1)) {
+        cout << "Napis jest palindromem" << endl;
+    }
+    else {
+        cout << "Napis nie jest palindromem" << endl;
+    }*/
+
+    /*zadanie 9 
+    int liczba;
+    do {
+        cout << "Podaj liczbe naturalna: ";
+        cin >> liczba;
+    } while (liczba < 1);
+    cout << "(Iteracyjnie) Suma wszystkich liczb naturalnych od 1 do " << liczba << " wynosi: " << sumaIte(liczba) << endl;
+    cout << "(Rekurencyjnie) Suma wszystkich liczb naturalnych od 1 do " << liczba << " wynosi: " << sumaRek(liczba) << endl;*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
